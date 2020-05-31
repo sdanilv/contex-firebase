@@ -3,7 +3,7 @@ import {Action, ALERT_OFF, ALERT_ON} from "../ActionsType";
 const handlers = {
     "DEFAULT": (state: AlertStateType) => state,
     [ALERT_ON]: (state: AlertStateType, message: string) => ({...state, alert: true, message}),
-    [ALERT_OFF]: (state: AlertStateType) => ({...state, alert: false})
+    [ALERT_OFF]: (state: AlertStateType) => ({...state, alert: false, message:""})
 }
 
 type Actions = Action<"DEFAULT">

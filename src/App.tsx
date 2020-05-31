@@ -17,7 +17,6 @@ function App() {
             <BrowserRouter>
                 <Navbar/>
                 <Alert />
-
                 <div className="container">
                     <Route path="/" exact component={Home}/>
                     <Route path="/about" component={About}/>

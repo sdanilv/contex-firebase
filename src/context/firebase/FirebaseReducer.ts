@@ -1,6 +1,6 @@
 import {Action, Get, NOTE_ADD, NOTE_DELETE, NOTE_FETCH} from "../ActionsType";
 
-export type Note = { message: string, date: Date, id: string }
+export type Note = { message: string, date: string, id: string }
 export type NoteId = Get<Note, "id">
 type FirebaseState = { notes: Array<Note | null> }
 export type Notes =  Get<FirebaseState, "notes">

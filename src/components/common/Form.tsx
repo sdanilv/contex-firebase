@@ -1,12 +1,25 @@
-import React from 'react';
+import React, {FC, useContext, useState} from 'react';
+import {FirebaseContextType} from "../../context/firebase/FirebaseContext";
+import AlertContext from "../../context/alert/AlertContext";
 
-const Form = () => {
+const Form :FC<Pick<FirebaseContextType, "addNote">> = ({addNote}) => {
+    const {alertOn, alertOff} = useContext(AlertContext)
+    const [text, setText] = useState("")
+
+    const textHandler = (eve: React.ChangeEvent<HTMLInputElement>) => {
+        setText(eve.target.value)
+    }
+
+    const submitHandler = (eve: React.FormEvent<HTMLFormElement>) => {
+        eve.preventDefault()
+        alertOn("Note added")
+        addNote(text)
+    }
     return (
-        <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Add new note</label>
-            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        <form onSubmit={submitHandler} className="form-group">
+            <input value={text}  onChange={textHandler} className="form-control"
                    placeholder="Enter note"/>
-        </div>
+        </form>
     )
 };
 
