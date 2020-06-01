@@ -1,5 +1,5 @@
 import React, {FC, useReducer} from 'react'
-import AlertContext, {AlertContextProps} from "./AlertContext"
+import AlertContext from "./AlertContext"
 import {alertReducer} from "./AlertReducer";
 import {ALERT_OFF, ALERT_ON} from "../ActionsType";
 
@@ -15,6 +15,7 @@ const AlertState: FC =  ({children}) => {
     const alertOff = () => {
         dispatch({type: ALERT_OFF})
     }
+
     return (
         <AlertContext.Provider  value={{ alertOn, alertOff, alert: state.alert, alertMessage:state.message }  }>
             {children}

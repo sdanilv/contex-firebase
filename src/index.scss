@@ -18,16 +18,33 @@ code {
   float: right;
 }
 
-.alert:hover {
+.alert {
   opacity: 0;
-  transition: opacity 3s ease-in;
-}
 
-.my-effect {
-  opacity: 0;
+  &.open-alert {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+  }
+  &.close-alert{
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
 }
-
-.my-li {
+.item-enter {
+  transform: scale(0.5);
   opacity: 0;
-  transition: opacity 3s ease-in;
+
+}
+.item-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity, transform 500ms ease-in;
+}
+.item-exit {
+  transform: scale(1);
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
 }
