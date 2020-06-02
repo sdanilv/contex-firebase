@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import Form from "../components/common/Form";
-import NoteList from "../components/NoteList";
+import NoteList from "../components/Notes/NoteList";
 import FirebaseContext from "../context/firebase/FirebaseContext";
 
 const Home = () => {

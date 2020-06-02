@@ -1,12 +1,9 @@
 import React from 'react';
 
-const About = () => {
-
-    return (
+const About = () =>
         <div className="jumbotron">
             About
         </div>
-    )
-};
+
 
 export default About;

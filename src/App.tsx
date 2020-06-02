@@ -8,10 +8,7 @@ import Alert from "./components/common/Alert";
 import AlertState from "./context/alert/AlertState";
 import FirebaseState from "./context/firebase/FirebaseState";
 
-type AppProps = { alertOn: (message: string) => void, alertOff: () => void, alert: boolean, alertMessage: string }
-
-function App() {
-    return (
+const App = () =>
         <FirebaseState>
         <AlertState>
             <BrowserRouter>
@@ -24,7 +21,5 @@ function App() {
             </BrowserRouter>
         </AlertState>
         </FirebaseState>
-    );
-}
 
 export default App;
