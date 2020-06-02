@@ -1,9 +1,10 @@
 import React, {FC, useContext, useState} from 'react';
-import {FirebaseContextType} from "../../context/firebase/FirebaseContext";
-import AlertContext from "../../context/alert/AlertContext";
+import {FirebaseContextProps} from "../../context/firebase/FirebaseContext";
+import AlertContext, {AlertContextProps} from "../../context/alert/AlertContext";
 
-const Form: FC<Pick<FirebaseContextType, "addNote">> = ({addNote}) => {
-    const {alertOn, alertOff} = useContext(AlertContext)
+type Props = Pick<FirebaseContextProps, "addNote">&Pick<AlertContextProps, "alertOn">
+const Form: FC<Props> = ({addNote,alertOn}) => {
+
     const [text, setText] = useState("")
 
     const textHandler = (eve: React.ChangeEvent<HTMLInputElement>) =>
@@ -13,7 +14,7 @@ const Form: FC<Pick<FirebaseContextType, "addNote">> = ({addNote}) => {
         eve.preventDefault()
         alertOn("Note added")
         await addNote(text)
-        await setTimeout(() => alertOff(), 3000)
+
     }
 
     return (

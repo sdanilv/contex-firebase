@@ -13,7 +13,7 @@ type AlertStateType = {
 export const alertReducer = (state: AlertStateType, action: Actions) => {
     switch (action.type) {
         case ALERT_OFF:
-            return ({...state, alert: false, message:""})
+            return ({...state, alert: false})
         case ALERT_ON:
             return {...state, alert: true, message:action.message}
         default:

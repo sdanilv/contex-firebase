@@ -18,33 +18,32 @@ code {
   float: right;
 }
 
-.alert {
-  opacity: 0;
-
-  &.open-alert {
-    opacity: 1;
-    transition: opacity 1s ease-in;
-  }
-  &.close-alert{
-    opacity: 0;
-    transition: opacity 1s ease-in;
-  }
+.alert-enter {opacity: 0;}
+.alert-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in;
 }
-.item-enter {
+.alert-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+
+.note-enter {
   transform: scale(0.5);
   opacity: 0;
 
 }
-.item-enter-active {
+
+.note-enter-active {
   opacity: 1;
   transform: scale(1);
-  transition: opacity, transform 500ms ease-in;
+  transition: opacity 1s, transform 1s ease-in;
 }
-.item-exit {
-  transform: scale(1);
-  opacity: 1;
-}
-.item-exit-active {
+
+
+.note-exit-active {
   opacity: 0;
-  transition: opacity 500ms ease-in;
+  transform: scale(0.1);
+  transition: opacity 1s, transform 1s ease-in;
 }

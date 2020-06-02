@@ -34,7 +34,6 @@ const FirebaseState: FC = (props) => {
         dispatch({type: NOTE_DELETE, id})
     }
 
-
     return (
         <FirebaseContext.Provider value={{notes, addNote, deleteNote}}>
             {props.children}

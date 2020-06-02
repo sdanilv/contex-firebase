@@ -3,7 +3,7 @@ import './App.css';
 import {BrowserRouter, Route} from "react-router-dom";
 import Home from "./page/Home";
 import About from "./page/About";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Alert from "./components/common/Alert";
 import AlertState from "./context/alert/AlertState";
 import FirebaseState from "./context/firebase/FirebaseState";
